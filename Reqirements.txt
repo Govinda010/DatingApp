@@ -1,0 +1,5 @@
+1. C# powered by Omnisharp 
+2. C# extension
+3. Material Icon Theme 
+4. Trun on debug
+5. MicrosoftEntityFramework
