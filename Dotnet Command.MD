@@ -11,3 +11,5 @@
 10. dotnet tool update --global dotnet-ef --version 7.0.0
 11. dotnet ef migrations add InitialCreate -o .\Data\Migrations
 12. dotnet ef database update
+13. dotnet new gitignore
+14. dotnet new globaljson

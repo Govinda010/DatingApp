@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\API"
+    "\\API",
+    "\\client"
   ],
-  "SelectedNode": "\\API\\datingapp.db",
+  "SelectedNode": "\\client",
   "PreviewInSolutionExplorer": false
 }
