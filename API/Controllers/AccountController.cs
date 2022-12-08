@@ -34,6 +34,24 @@ namespace API.Controllers
             await _context.SaveChangesAsync();
             return user;
         }
+
+        [HttpPost("login")]
+        public async Task<ActionResult<AppUser>>Login(LoginDto loginDto)
+        {
+            var user = await _context.Users.SingleOrDefaultAsync(x=>x.UserName==loginDto.Username.ToLower());
+            
+            if(user == null) return Unauthorized("Invalid User");
+
+            using var hamc = new HMACSHA512(user.PassowrdSlat);
+            var computedHash = hamc.ComputeHash(Encoding.UTF8.GetBytes(loginDto.Password));
+            for(int i =0; i<computedHash.Length; i++)
+            {
+                if (computedHash[i] != user.PasswordHash[i]) return Unauthorized("Invalid Password");
+            }
+            return user;
+
+        }
+
         private async Task<bool>UserExists(string username)
         {
             return await _context.Users.AnyAsync(x=>x.UserName== username.ToLower());
