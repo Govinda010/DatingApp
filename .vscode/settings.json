@@ -1,3 +1,5 @@
 {
-    "csharp.inlayHints.parameters.enabled": false
+    "csharpextensions.includeNamespaces": true,
+    "csharpextensions.reFormatAfterChange": true,
+    "csharp.format.enable": false
 }
