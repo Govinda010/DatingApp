@@ -1,5 +1,6 @@
 {
     "csharpextensions.includeNamespaces": true,
     "csharpextensions.reFormatAfterChange": true,
-    "csharp.format.enable": false
+    "csharp.format.enable": false,
+    "csharpextensions.useFileScopedNamespace": true
 }

@@ -1722,11 +1722,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ASP.NET Core MVC Course (.NET 5)\\DatingApp\\API\\API.csproj",
+      "projectUniqueName": "d:\\ASP.NET Core MVC Course (.NET 5)\\DatingApp\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "D:\\ASP.NET Core MVC Course (.NET 5)\\DatingApp\\API\\API.csproj",
+      "projectPath": "d:\\ASP.NET Core MVC Course (.NET 5)\\DatingApp\\API\\API.csproj",
       "packagesPath": "C:\\Users\\Govinda\\.nuget\\packages\\",
-      "outputPath": "D:\\ASP.NET Core MVC Course (.NET 5)\\DatingApp\\API\\obj\\",
+      "outputPath": "d:\\ASP.NET Core MVC Course (.NET 5)\\DatingApp\\API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
