@@ -67,3 +67,8 @@ D:\ASP.NET Core MVC Course (.NET 5)\DatingApp\API\obj\Debug\net7.0\refint\API.dl
 D:\ASP.NET Core MVC Course (.NET 5)\DatingApp\API\obj\Debug\net7.0\API.pdb
 D:\ASP.NET Core MVC Course (.NET 5)\DatingApp\API\obj\Debug\net7.0\API.genruntimeconfig.cache
 D:\ASP.NET Core MVC Course (.NET 5)\DatingApp\API\obj\Debug\net7.0\ref\API.dll
+D:\ASP.NET Core MVC Course (.NET 5)\DatingApp\API\bin\Debug\net7.0\Microsoft.IdentityModel.Abstractions.dll
+D:\ASP.NET Core MVC Course (.NET 5)\DatingApp\API\bin\Debug\net7.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\ASP.NET Core MVC Course (.NET 5)\DatingApp\API\bin\Debug\net7.0\Microsoft.IdentityModel.Logging.dll
+D:\ASP.NET Core MVC Course (.NET 5)\DatingApp\API\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
+D:\ASP.NET Core MVC Course (.NET 5)\DatingApp\API\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
