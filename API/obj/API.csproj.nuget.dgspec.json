@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "d:\\ASP.NET Core MVC Course (.NET 5)\\DatingApp\\API\\API.csproj": {}
+    "D:\\ASP.NET Core MVC Course (.NET 5)\\DatingApp\\API\\API.csproj": {}
   },
   "projects": {
-    "d:\\ASP.NET Core MVC Course (.NET 5)\\DatingApp\\API\\API.csproj": {
+    "D:\\ASP.NET Core MVC Course (.NET 5)\\DatingApp\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\ASP.NET Core MVC Course (.NET 5)\\DatingApp\\API\\API.csproj",
+        "projectUniqueName": "D:\\ASP.NET Core MVC Course (.NET 5)\\DatingApp\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "d:\\ASP.NET Core MVC Course (.NET 5)\\DatingApp\\API\\API.csproj",
+        "projectPath": "D:\\ASP.NET Core MVC Course (.NET 5)\\DatingApp\\API\\API.csproj",
         "packagesPath": "C:\\Users\\Govinda\\.nuget\\packages\\",
-        "outputPath": "d:\\ASP.NET Core MVC Course (.NET 5)\\DatingApp\\API\\obj\\",
+        "outputPath": "D:\\ASP.NET Core MVC Course (.NET 5)\\DatingApp\\API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -27,6 +27,7 @@
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
