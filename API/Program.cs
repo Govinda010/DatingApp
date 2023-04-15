@@ -1,5 +1,6 @@
 using System.Text;
 using API.Extensions;
+using API.Middleware;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 
@@ -18,6 +19,8 @@ builder.Services.AddApplicationSerivces(builder.Configuration);
 builder.Services.AddIdentityServices(builder.Configuration);
 
 var app = builder.Build();
+
+app.UseMiddleware<ExceptionMiddleware>();
 
 // Configure the HTTP request pipeline.
 /*if (app.Environment.IsDevelopment())
