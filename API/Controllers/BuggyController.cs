@@ -37,7 +37,7 @@ public class BuggyController :BaseApiController
         return thingToReturn;
     }
 
-    [HttpGet("Bad-request")]
+    [HttpGet("bad-request")]
     public ActionResult<string>GetBadRequest()
     {
         return BadRequest("This was not a good result");
