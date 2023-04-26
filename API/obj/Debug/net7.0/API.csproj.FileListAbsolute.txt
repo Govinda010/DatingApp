@@ -76,3 +76,5 @@ D:\ASP.NET Core MVC Course (.NET 5)\DatingApp\API\bin\Debug\net7.0\Microsoft.Asp
 D:\ASP.NET Core MVC Course (.NET 5)\DatingApp\API\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.dll
 D:\ASP.NET Core MVC Course (.NET 5)\DatingApp\API\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 D:\ASP.NET Core MVC Course (.NET 5)\DatingApp\API\bin\Debug\net7.0\Data\UserSeedData.json
+D:\ASP.NET Core MVC Course (.NET 5)\DatingApp\API\bin\Debug\net7.0\AutoMapper.dll
+D:\ASP.NET Core MVC Course (.NET 5)\DatingApp\API\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
