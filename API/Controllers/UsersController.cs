@@ -17,7 +17,6 @@ namespace API.Controllers
         }
 
         //API EndPoint to get Users from Users table
-        [AllowAnonymous]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<AppUser>>> GetUsers(){
             return await _context.Users.ToListAsync();
