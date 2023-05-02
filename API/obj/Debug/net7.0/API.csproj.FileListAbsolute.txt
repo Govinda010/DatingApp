@@ -78,3 +78,5 @@ D:\ASP.NET Core MVC Course (.NET 5)\DatingApp\API\bin\Debug\net7.0\Microsoft.Ide
 D:\ASP.NET Core MVC Course (.NET 5)\DatingApp\API\bin\Debug\net7.0\Data\UserSeedData.json
 D:\ASP.NET Core MVC Course (.NET 5)\DatingApp\API\bin\Debug\net7.0\AutoMapper.dll
 D:\ASP.NET Core MVC Course (.NET 5)\DatingApp\API\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\ASP.NET Core MVC Course (.NET 5)\DatingApp\API\bin\Debug\net7.0\package-lock.json
+D:\ASP.NET Core MVC Course (.NET 5)\DatingApp\API\bin\Debug\net7.0\package.json
