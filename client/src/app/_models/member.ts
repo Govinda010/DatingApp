@@ -9,7 +9,7 @@ export interface Member {
     knownAs: string
     lastActive: string
     gender: string
-    introdcution: any
+    introduction: string
     lookingFor: string
     interests: string
     city: string

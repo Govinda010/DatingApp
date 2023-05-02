@@ -18,12 +18,11 @@ export class MemberDetailComponent implements OnInit{
   loadMember()
   {
     var username = this.route.snapshot.paramMap.get('username');
-    console.log(this.route);
     if(!username)return;
     this.memberService.getMember(username).subscribe({
       next:member=>{
         this.member=member;
-        console.log(this.member);
+        console.log(member);
       }
     })
   }
