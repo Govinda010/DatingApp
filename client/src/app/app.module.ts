@@ -21,6 +21,7 @@ import { JwtInterceptor } from './_interceptor/jwt.interceptor';
 import { SharedModule } from './_modules/shared/shared.module';
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
 import { LoadingInterceptor } from './_interceptor/loading.interceptor';
+import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { LoadingInterceptor } from './_interceptor/loading.interceptor';
     NotFoundComponent,
     ServerErrorComponent,
     MemberCardComponent,
-    MemberEditComponent
+    MemberEditComponent,
+    PhotoEditorComponent
   ],
   imports: [
     BrowserModule,

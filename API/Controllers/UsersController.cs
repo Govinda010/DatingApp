@@ -62,7 +62,7 @@ namespace API.Controllers
             if(result.Error !=null) return BadRequest(result.Error.Message);
             var photo = new Photo
             {
-                Url = result.SecureUrl.AbsolutePath,
+                Url = result.SecureUrl.AbsoluteUri,
                 PublicId = result.PublicId
             };
             if(user.Photos.Count==0)photo.IsMain = true;
