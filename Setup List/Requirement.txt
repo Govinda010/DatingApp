@@ -1,0 +1,15 @@
+Required
+1. Dotnet skd
+2. Node.js  
+3. Postman
+5. Component for visual studio code
+    a. c# for visual studio for Omnisharp
+    b.  At c# extension --> Omnisharp:Enable Async Completion , Organize Imports On Format
+    c. Nuget Gallery
+    d. Material Icon Theme
+    e. Goto setting and type exclude **/obj
+    f. npm install -g @angular/cli@14 --> if we are using powershell we should use
+        Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
+        
+
+    

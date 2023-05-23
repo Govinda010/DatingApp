@@ -23,6 +23,10 @@ export class MembersService {
       })
     )
   }
+  setMainPhoto(photoId:number)
+  {
+    return this.http.put(this.baseUrl + 'users/set-main-photo/'+ photoId,{});
+  }
   getMember(username:string)
   {
     const member= this.members.find(x=>x.userName===username)
