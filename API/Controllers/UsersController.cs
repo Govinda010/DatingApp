@@ -3,6 +3,7 @@ using API.Data;
 using API.DTOs;
 using API.Entities;
 using API.Extensions;
+using API.Helpers;
 using API.Interfaces;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
@@ -27,10 +28,14 @@ namespace API.Controllers
 
         //API EndPoint to get Users from Users table
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<MemberDto>>> GetUsers(){
-            var users = await _userRepository.GetUsersAsync();
-            var userToReturn = _mapper.Map<IEnumerable<MemberDto>>(users);
-            return Ok(userToReturn);
+        public async Task<ActionResult<PagedList<IEnumerable<MemberDto>>>> GetUsers(
+            [FromQuery]UserParams userParams)
+        {
+            var users = await _userRepository.GetMembersDto(userParams);
+            Response.AddPaginationHeader(new PaginationHeader(users.CurrentPage,
+                users.PageSize, users.TotalCount, users.TotalPages));
+
+            return Ok(users);
         }
 
         // API to return the User as Id
