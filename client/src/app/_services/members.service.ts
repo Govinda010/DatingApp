@@ -4,6 +4,7 @@ import { environment } from 'src/enviroments/environment';
 import { Member } from '../_models/member';
 import { map, of } from 'rxjs';
 import { PaginatedResult } from '../_models/pagination';
+import { UserParams } from '../_models/userParams';
 
 @Injectable({
   providedIn: 'root'
@@ -11,35 +12,41 @@ import { PaginatedResult } from '../_models/pagination';
 export class MembersService {
   baseUrl= environment.apiUrl;
   members:Member[]=[];
-  paginatedResult:PaginatedResult<Member[]> = new PaginatedResult<Member[]>;
+  
 
   constructor(private http:HttpClient) { }
 
-  getMembers(page?:number, itemsPerPage?:number)
+  getMembers(userParams:UserParams)
   {
-    let params = new HttpParams();
-    if(page && itemsPerPage)
-    {
-      params = params.append("pageNumber",page);
-      params = params.append("pageSize",itemsPerPage);
-    }
+    let params = this.getPaginationHeaders(userParams);
     
     // if(this.members.length>0)return of(this.members);
-    return this.http.get<Member[]>(this.baseUrl + 'users',{observe: 'response',params}).pipe(
-      map(response=>{
-        if(response.body)
-        {
-          this.paginatedResult.result = response.body;        
+    return this.getPaginatedResult<Member[]>(this.baseUrl + 'users',params)
+  }
+  private getPaginatedResult<T>(url:string, params: HttpParams) {
+    const paginatedResult:PaginatedResult<T> = new PaginatedResult<T>;
+    return this.http.get<T>(url, { observe: 'response', params }).pipe(
+      map(response => {
+        if (response.body) {
+          paginatedResult.result = response.body;
         }
         const pagination = response.headers.get('Pagination');
-        if(pagination)
-        {
-          this.paginatedResult.pagination = JSON.parse(pagination);
+        if (pagination) {
+          paginatedResult.pagination = JSON.parse(pagination);
         }
-        return this.paginatedResult;
+        return paginatedResult;
       })
-    )
+    );
   }
+
+  private getPaginationHeaders(userParams:UserParams) {
+    let params = new HttpParams();
+    params = params.append("pageNumber",userParams.pageNumber);
+    params = params.append("pageSize", userParams.pageSize);
+ 
+    return params;
+  }
+
   setMainPhoto(photoId:number)
   {
     return this.http.put(this.baseUrl + 'users/set-main-photo/'+ photoId,{});
