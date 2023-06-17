@@ -18,6 +18,7 @@ export class MemberListComponent implements OnInit {
   members: Member[] = [];
   userParams:UserParams | undefined;
   user:User | undefined;
+  genderList = [{value:'male',display:'Males'},{value:'female',display:'Females'}];
 
   constructor(private memberSerive:MembersService,private accountService:AccountService){
     this.accountService.currentUser$.pipe(take(1)).subscribe({
@@ -33,7 +34,14 @@ export class MemberListComponent implements OnInit {
   ngOnInit(): void {
     this.loadMembers();
   }
-
+  resetFilters()
+  {
+    if(this.user)
+    {
+      this.userParams = new UserParams(this.user);
+      this.loadMembers();
+    }
+  }
   loadMembers()
   {
     if(!this.userParams) return;
