@@ -43,7 +43,7 @@ export class MemberListComponent implements OnInit {
     }
   }
   loadMembers()
-  {
+  {    
     if(!this.userParams) return;
     this.memberSerive.getMembers(this.userParams).subscribe(
       {
