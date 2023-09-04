@@ -27,7 +27,7 @@ namespace API.Controllers
            _mapper = mapper;
         }
 
-        [Authorize(Roles ="Admin")]
+        //[Authorize(Roles ="Admin")]
         //API EndPoint to get Users from Users table
         [HttpGet]
         public async Task<ActionResult<PagedList<IEnumerable<MemberDto>>>> GetUsers(
@@ -45,7 +45,7 @@ namespace API.Controllers
             return Ok(users);
         }
 
-        [Authorize(Roles ="member")]
+       
         // API to return the User as Id
         [HttpGet("{username}")]
         public async Task<ActionResult<MemberDto>>GetUser(string username){
