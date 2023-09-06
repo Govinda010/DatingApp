@@ -11,8 +11,12 @@ import { RolesModalComponent } from 'src/app/modals/roles-modal/roles-modal.comp
 })
 export class UserManagementComponent implements OnInit {
   users: User[] = [];
-  bsModalRef?: BsModalRef;
- 
+  bsModalRef: BsModalRef<RolesModalComponent> = new BsModalRef<RolesModalComponent>();
+  availableRoles = [
+    'Admin',
+    'Moderator',
+    'Member'
+  ]
   constructor(private adminService:AdminService,private modalService:BsModalService){}
   ngOnInit(): void {
     this.getUsersWithRoles();
@@ -24,19 +28,31 @@ export class UserManagementComponent implements OnInit {
       next: users=> this.users = users
     })
   }
-  openRolesModal()
+  openRolesModal(user:User)
   {
-    const initialState: ModalOptions = {
-      initialState: {
-        list: [
-          'Open a modal with component',
-          'Pass your data',
-          'Do something else'
-        ],
-        title: 'Modal with component'
-      }as Partial<Object>
-    };
-    this.bsModalRef = this.modalService.show(RolesModalComponent, initialState);
-    this.bsModalRef.content.closeBtnName = 'Close';
+    const config = {
+      class:'modal-dialog-centered',
+      initialState:{
+        username:user.username,
+        availableRoles:this.availableRoles,
+        selectedRoles: [...user.roles]
+      }
+    }
+    this.bsModalRef = this.modalService.show(RolesModalComponent, config);
+    this.bsModalRef.onHide?.subscribe({
+      next:()=>{
+        const selectedRoles = this.bsModalRef.content?.selectedRoles;
+        if(!this.arrayEqual(selectedRoles!,user.roles)){
+          this.adminService.updateUserRoles(user.username,selectedRoles!).subscribe({
+            next:roles=>user.roles = roles
+          })
+        }
+      }
+    })
+  }
+
+  private arrayEqual(arr1:any[], arr2:any[])
+  {
+    return JSON.stringify(arr1.sort()) === JSON.stringify(arr2.sort());
   }
 }
