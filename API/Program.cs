@@ -1,6 +1,7 @@
 using API.Data;
 using API.Entities;
 using API.Extensions;
+using API.SignalR;
 using CloudinaryDotNet.Actions;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -31,7 +32,10 @@ app.UseMiddleware<ExceptionMiddleware>();
 }*/
 
 
-app.UseCors(builder => builder.AllowAnyHeader().AllowAnyMethod()
+app.UseCors(builder => builder
+    .AllowAnyHeader()
+    .AllowAnyMethod()
+    .AllowCredentials()
 .WithOrigins("https://localhost:4200"));
 
 //app.UseHttpsRedirection();
@@ -40,6 +44,7 @@ app.UseAuthorization(); //-- Ask for do you have valid token
 app.UseAuthorization(); //--> Ask what allow to to do
 
 app.MapControllers();
+app.MapHub<PresenceHub>("hubs/precense");
 
 using var scope = app.Services.CreateAsyncScope();
 var services = scope.ServiceProvider;
