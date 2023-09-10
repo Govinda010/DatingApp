@@ -35,10 +35,14 @@ public static class IdentityServiceExtensions
                     OnMessageReceived = context =>
                     {
                         var accessToken = context.Request.Query["access_token"];
+
                         var path = context.HttpContext.Request.Path;
+                        var test = path.StartsWithSegments("/hubs");
+                        Console.WriteLine("----------------"+ test);
                         if(!string.IsNullOrEmpty(accessToken) && path.StartsWithSegments("/hubs"))
                         {
                             context.Token = accessToken;
+                            Console.WriteLine("----------------"+ accessToken);
                         }
                         return Task.CompletedTask;
                     }
