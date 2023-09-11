@@ -45,6 +45,7 @@ app.UseAuthorization(); //--> Ask what allow to to do
 
 app.MapControllers();
 app.MapHub<PresenceHub>("hubs/presence");
+app.MapHub<PresenceHub>("hubs/message");
 
 using var scope = app.Services.CreateAsyncScope();
 var services = scope.ServiceProvider;
